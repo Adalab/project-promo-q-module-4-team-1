@@ -1,5 +1,5 @@
 function SendToApi (data){
-    return fetch ('https://awesome-profile-cards.herokuapp.com/card/',
+    return fetch ('//localhost:4000/card',
    
     {
         method: 'POST',
@@ -10,7 +10,7 @@ function SendToApi (data){
       } )
         .then((resp) => resp.json() )
         .then((data) => data  )
-        /* .catch(function(error) { console.log(error); }) */;
+         .catch(function(error) { console.log(error); }) ;
     }
     
 
