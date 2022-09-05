@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "./static/css/main.9608a67c.css",
+    "main.js": "./static/js/main.e56ae4a2.js",
+    "static/media/logo-git-brunch.png": "./static/media/logo-git-brunch.3fdd2de9de22c7b017ae.png",
+    "index.html": "./index.html",
+    "main.9608a67c.css.map": "./static/css/main.9608a67c.css.map",
+    "main.e56ae4a2.js.map": "./static/js/main.e56ae4a2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9608a67c.css",
+    "static/js/main.e56ae4a2.js"
+  ]
+}

@@ -1,0 +1,16 @@
+@import 'core/variables';
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    @media all and (min-width:680px) {
+        align-items: flex-start;
+        justify-content: left;}
+}
+.header__img{
+    width: 201px;
+    margin: 30px 79px 30px 40px;
+    
+}

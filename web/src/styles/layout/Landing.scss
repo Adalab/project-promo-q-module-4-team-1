@@ -1,0 +1,114 @@
+@import '../core/Variables.scss';
+
+.icon-index-main {
+  color: $dull-orange;
+  margin: 0;
+  transform: scale(1.5);
+  margin-bottom: 5px;
+}
+
+.main {
+  border-bottom: 1px solid $milton-glassy;
+  background-color: $white-four;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__colcen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0% 10.94% 9.38% 10.94%;
+    /*regla de 3*/
+  }
+
+  &__section--img {
+    width: 250px;
+    margin-top: 29.69%;
+    padding-bottom: 2.213rem;
+  }
+
+  &__section--wrapper {
+    display: flex;
+    flex-direction: row;
+    border: 1.6px $dull-orange solid;
+    border-radius: 3.5%;
+  }
+
+  &__section--paragraph {
+    font-size: $size-small;
+    color: $dark-green-blue;
+    font-family: $open;
+    line-height: normal;
+    text-align: center;
+    padding-bottom: 1.113rem;
+  }
+
+  &__section--title {
+    font-size: $size-big;
+    color: $dull-orange;
+    font-family: $merriwheather;
+    font-weight: 900;
+    line-height: normal;
+    text-align: center;
+  }
+
+  &__icon--paragraph {
+    color: $gunmetal;
+    font-size: $size-small;
+    font-family: $open;
+    text-align: center;
+  }
+
+  &__link--div {
+    width: 129px;
+    height: 42px;
+    margin-top: 2.413rem;
+    margin-bottom: 9.38%;
+  }
+
+  &__link--link {
+    text-decoration: none;
+    color: $white-six;
+    font-family: $open;
+    font-size: $size-button;
+    text-transform: uppercase;
+    padding: 8% 16%;
+    background-color: $dirty-blue;
+    border-radius: 20px;
+    /*la forma no queda exacta*/
+  }
+
+  &__icon {
+    margin: 0.938rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.main__last {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+@media all and (min-width: 768px) {
+  .main {
+    height: 85vh;
+
+    &__link--div {
+      transform: translateY(121%);
+    }
+
+    &__colcen {
+      margin: 30% 10.94% 25% 10.94%;
+    }
+  }
+}

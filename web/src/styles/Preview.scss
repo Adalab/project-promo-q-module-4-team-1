@@ -1,0 +1,139 @@
+@import 'core/variables';
+
+.card {
+  background: linear-gradient($silver, $pale-grey);
+  height: 457px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+  gap: 30px;
+
+  &__container {
+    background-color: $white-six;
+    width: 240px;
+    height: 329px;
+    border-bottom: 40px;
+
+    &--name {
+      font-size: 18px;
+      font-family: $montserrat;
+      font-weight: bold;
+      padding-left: 20px;
+      margin-top: 21px;
+      margin-bottom: 10px;
+    }
+
+    &--paragraph {
+      font-size: 16px;
+      font-family: $montserrat-bold;
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+
+    &--verticalBorder {
+      border-left: 5px solid;
+    }
+
+    &--image {
+      width: 240px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    &--list {
+      display: flex;
+      gap: 20px;
+      padding: 10px 0 0 20px;
+    }
+  }
+
+  &__containerIcon {
+    border: 2px solid;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+  }
+
+  &__rrss {
+    margin-top: 4px;
+    font-size: 20px;
+  }
+}
+
+
+.resetButton {
+  border: 1px solid $white-six;
+  border-radius: 15px;
+  background-color: transparent;
+  font-size: 12px;
+  font-family: $open;
+  text-transform: uppercase;
+  color: $gunmetal;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-left: -170px;
+}
+
+
+.palette1 {
+  .card__container--name {
+    color: $dark-green-blue;
+  }
+
+  .card__container--verticalBorder {
+    border-color: $dirty-blue;
+  }
+
+  .card__containerIcon {
+    color: $dark-green-blue;
+    border-color: $hospital-green;
+  }
+
+  .card__rrss {
+    color: $dark-green-blue;
+    border-color: $hospital-green;
+  }
+}
+
+.palette2 {
+  .card__container--name {
+    color: $dried-blood;
+  }
+
+  .card__container--verticalBorder {
+    border-color: $rusty-red;
+  }
+
+  .card__containerIcon {
+    color: $dried-blood;
+    border-color: $tomato;
+  }
+
+  .card__rrss {
+    color: $dried-blood;
+    border-color: $tomato;
+  }
+}
+
+.palette3 {
+  .card__container--name {
+    color: $slate;
+  }
+
+  .card__container--verticalBorder {
+    border-color: $faded-orange;
+  }
+
+  .card__containerIcon {
+    color: $slate;
+    border-color: $light-grey-blue;
+  }
+
+  .card__rrss {
+    color: $slate;
+    border-color: $light-grey-blue;
+  }
+}

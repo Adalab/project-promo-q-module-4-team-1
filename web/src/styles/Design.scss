@@ -1,0 +1,132 @@
+@import 'core/variables';
+
+.form-section{
+    box-sizing: content-box;
+    width: 100%;
+}
+
+.design{
+    &-form{
+        width:100%;
+    }
+
+    &-radio{
+        cursor: pointer;
+    }
+
+    &-icon {color: $dull-orange;
+        margin: 13px 10px 10px 0px;
+        cursor: pointer;}
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.color {
+    text-transform: uppercase;
+    font-size: 14px;
+    padding-left: 39px;
+    color: $gunmetal;
+    font-family: $open;
+    margin-top:10px;
+}
+.election {
+    
+    display: flex;
+    flex-direction: column;
+    
+}
+.palette-rectangle {
+    display: flex;
+    margin: 10px;
+}
+
+.rectangle {
+    width: 30px;
+    height: 25px;
+}
+
+.color1 {
+    background-color: $dark-green-blue;
+}
+
+.color2 {
+    background-color: $dirty-blue;
+}
+
+.color3{
+    background-color: $hospital-green;
+}
+
+.color4 {
+    background-color: $dried-blood;
+  }
+  
+.color5 {
+    background-color: $rusty-red;
+  }
+  
+.color6 {
+    background-color: $tomato;
+  }
+  
+.color7 {
+    background-color: $slate;
+  }
+  
+.color8 {
+    background-color: $faded-orange;
+  }
+  
+.color9 {
+    background-color: $light-grey-blue;
+  }
+
+
+// DESIGN MAIN
+
+  .fa-angle-up {
+    padding-top: 16px;
+    position: absolute;
+    right: 10px;
+  
+    @media all and (min-width: 768px) {
+      right: 45%;
+    }
+  }
+  
+  // .share-arrow{
+  //     padding-top: 0px;
+  //     cursor: pointer;
+  // }
+  
+  .line {
+    border-top: 1px solid $white-two;
+  }
+  
+  @media all and (min-width: 768px) {
+    .main__forflex {
+      display: flex;
+      flex-direction: row-reverse;
+      background-color: $white-four;
+    }
+  
+    .section__preview {
+      background-color: linear-gradient($silver, $pale-grey);
+      width: 70%;
+      margin: 23px 40px 23px 0px;
+      border-radius: 6px;
+    }
+  }
+  
+  .arrow-translate {
+    transform: rotate(180deg);
+    padding-bottom: 10px;
+  } /*clase para que rote la flecha (toggle)*/
+  
+  
