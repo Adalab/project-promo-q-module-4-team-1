@@ -40,6 +40,7 @@ function App () {
 
   const handleCreatedCard = () => {
     SendToApi(dataCard).then((info) => {
+      console.log(info);
       setResultCard(info);
     });
   };

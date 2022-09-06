@@ -63,6 +63,7 @@ const Share = (props) => {
             rel="noopener noreferrer"
             href={`https://twitter.com/intent/tweet?text=Hello%20world%20my%20card&url=${props.resultCard.cardURL}`}
             className=" buttontwitter-button"
+            hidden={props.resultCard.success ? false : true}
           >
             <i className="fa-brands fa-twitter share-in-twitter"></i> Compartir
             en Twitter
