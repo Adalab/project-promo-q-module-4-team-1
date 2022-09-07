@@ -10,6 +10,7 @@ const server = express();
 // Configuramos el servidor
 server.use(cors());
 server.use(express.json({ limit: '10mb' }));
+server.set('view engine' , 'ejs' );
 
 // Arrancamos el servidor en el puerto 3000
 const serverPort = 4000;
@@ -48,3 +49,8 @@ server.post('/card', (req, res) => {
 server.get('/card/84821662378443174', (req, res) => {
   res.json({ url: "https://awesome-profile-cards.herokuapp.com/card/84821662378443174" })
 })
+
+server.get ('/prueba', ( req, res) => { res.render( 'detailCard' , { palette : 2} )})
+
+const staticServer = './src/public-react';
+server.use(express.static(staticServer));
