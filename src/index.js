@@ -3,7 +3,6 @@
 // Importamos los dos módulos de NPM necesarios para trabajar
 const express = require('express');
 const cors = require('cors');
-const { v4: uuidv4 } = require('uuid');
 // Creamos el servidor
 const server = express();
 const Database = require('better-sqlite3');
@@ -14,21 +13,21 @@ server.use(express.json({ limit: '10mb' }));
 server.set('view engine', 'ejs');
 
 // indicar qué base de datos vamos a usar con la ruta relativa a la raíz del proyecto
-const db = new Database('./src/database.db', {
+const db = new Database('./data/database.db', {
   // con verbose le decimos que muestre en la consola todas las queries que se ejecuten
   verbose: console.log,
   // así podemos comprobar qué queries estamos haciendo en todo momento
 });
 
 // Arrancamos el servidor en el puerto 3000
-const serverPort = 4000;
+const serverPort = process.env.PORT || 4000;
 server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
 
-const savedCard = [];
 // Escribimos los endpoints que queramos
 server.post('/card', (req, res) => {
+  req.body;
   if (
     req.body.palette === '' &&
     req.body.name === '' &&
@@ -46,7 +45,6 @@ server.post('/card', (req, res) => {
     res.json(responseError);
   } else {
     const newCard = {
-      id: uuidv4(),
       ...req.body,
     };
     savedCard.push(newCard);
@@ -60,8 +58,9 @@ server.post('/card', (req, res) => {
 });
 
 server.get('/card/:id', (req, res) => {
-  const userCard = savedCard.find((card) => card.id === req.params.id);
-  console.log(userCard);
+  const query = db.prepare('SELECT * FROM cards');
+  /*   const userCard = savedCard.find((card) => card.id === req.params.id); */
+  const userCard = query.get();
   res.render('detailCard', userCard);
 });
 
