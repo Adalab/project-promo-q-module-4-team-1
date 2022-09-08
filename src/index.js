@@ -6,17 +6,26 @@ const cors = require('cors');
 const { v4: uuidv4 } = require('uuid');
 // Creamos el servidor
 const server = express();
+const Database = require('better-sqlite3');
 
 // Configuramos el servidor
 server.use(cors());
 server.use(express.json({ limit: '10mb' }));
 server.set('view engine', 'ejs');
 
+// indicar qué base de datos vamos a usar con la ruta relativa a la raíz del proyecto
+const db = new Database('./src/database.db', {
+  // con verbose le decimos que muestre en la consola todas las queries que se ejecuten
+  verbose: console.log,
+  // así podemos comprobar qué queries estamos haciendo en todo momento
+});
+
 // Arrancamos el servidor en el puerto 3000
 const serverPort = 4000;
 server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
+
 const savedCard = [];
 // Escribimos los endpoints que queramos
 server.post('/card', (req, res) => {
@@ -43,7 +52,7 @@ server.post('/card', (req, res) => {
     savedCard.push(newCard);
 
     const responseSuccess = {
-      cardURL: `localhost:4000/card/${newCard.id}`,
+      cardURL: `http://localhost:4000/card/${newCard.id}`,
       success: true,
     };
     res.json(responseSuccess);
