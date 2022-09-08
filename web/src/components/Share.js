@@ -51,7 +51,7 @@ const Share = (props) => {
           </h6>
           <a
             target="_blank"
-            rel="noopener noreferrer"
+            /*             rel="noopener noreferrer" */
             href={props.resultCard.cardURL}
             className="buttontwitter-paragraph "
           >
@@ -60,7 +60,7 @@ const Share = (props) => {
 
           <a
             target="_blank"
-            rel="noopener noreferrer"
+            /*        rel="noopener noreferrer" */
             href={`https://twitter.com/intent/tweet?text=Hello%20world%20my%20card&url=${props.resultCard.cardURL}`}
             className=" buttontwitter-button"
             hidden={props.resultCard.success ? false : true}

@@ -50,15 +50,15 @@ server.post('/card', (req, res) => {
   }
 });
 
-server.get('/card/84821662378443174', (req, res) => {
-  res.json({
-    url: 'https://awesome-profile-cards.herokuapp.com/card/84821662378443174',
-  });
+server.get('/card/:id', (req, res) => {
+  const userCard = savedCard.find((card) => card.id === req.params.id);
+  console.log(userCard);
+  res.render('detailCard', userCard);
 });
 
-server.get('/prueba', (req, res) => {
+/* server.get('/prueba', (req, res) => {
   res.render('detailCard', { palette: 2 });
-});
+}); */
 
 const staticServer = './src/public-react';
 server.use(express.static(staticServer));
