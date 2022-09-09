@@ -55,12 +55,13 @@ server.post('/card', (req, res) => {
       req.body.github,
       req.body.photo
     );
-
-    const responseSuccess = {
-      cardURL: `http://localhost:4000/card/${result.lastInsertRowid}`,
-      success: true,
-    };
-    res.json(responseSuccess);
+    if (result != undefined) {
+      const responseSuccess = {
+        cardURL: `http://localhost:4000/card/${result.lastInsertRowid}`,
+        success: true,
+      };
+      res.json(responseSuccess);
+    }
   }
 });
 
