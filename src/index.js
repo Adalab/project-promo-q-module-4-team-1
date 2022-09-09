@@ -3,6 +3,7 @@
 // Importamos los dos módulos de NPM necesarios para trabajar
 const express = require('express');
 const cors = require('cors');
+
 // Creamos el servidor
 const server = express();
 const Database = require('better-sqlite3');
@@ -12,11 +13,8 @@ server.use(cors());
 server.use(express.json({ limit: '10mb' }));
 server.set('view engine', 'ejs');
 
-// indicar qué base de datos vamos a usar con la ruta relativa a la raíz del proyecto
 const db = new Database('./data/database.db', {
-  // con verbose le decimos que muestre en la consola todas las queries que se ejecuten
   verbose: console.log,
-  // así podemos comprobar qué queries estamos haciendo en todo momento
 });
 
 // Arrancamos el servidor en el puerto 3000
@@ -27,7 +25,7 @@ server.listen(serverPort, () => {
 
 // Escribimos los endpoints que queramos
 server.post('/card', (req, res) => {
-  req.body;
+  console.log('reqbody', req.body);
   if (
     req.body.palette === '' &&
     req.body.name === '' &&
@@ -35,7 +33,7 @@ server.post('/card', (req, res) => {
     req.body.email === '' &&
     req.body.phone === '' &&
     req.body.linkedin === '' &&
-    req.body.gitHub === '' &&
+    req.body.github === '' &&
     req.body.photo === ''
   ) {
     const responseError = {
@@ -44,13 +42,22 @@ server.post('/card', (req, res) => {
     };
     res.json(responseError);
   } else {
-    const newCard = {
-      ...req.body,
-    };
-    savedCard.push(newCard);
+    const query = db.prepare(
+      'INSERT INTO cards ( palette, name, job, email,phone, linkedin, github, photo) VALUES (?,?,?,?,?,?,?,?)'
+    );
+    const result = query.run(
+      req.body.palette,
+      req.body.name,
+      req.body.job,
+      req.body.email,
+      req.body.phone,
+      req.body.linkedin,
+      req.body.github,
+      req.body.photo
+    );
 
     const responseSuccess = {
-      cardURL: `http://localhost:4000/card/${newCard.id}`,
+      cardURL: `http://localhost:4000/card/${result.lastInsertRowid}`,
       success: true,
     };
     res.json(responseSuccess);
@@ -58,15 +65,10 @@ server.post('/card', (req, res) => {
 });
 
 server.get('/card/:id', (req, res) => {
-  const query = db.prepare('SELECT * FROM cards');
-  /*   const userCard = savedCard.find((card) => card.id === req.params.id); */
-  const userCard = query.get();
+  const query = db.prepare('SELECT * FROM cards WHERE id=?');
+  const userCard = query.get(req.params.id);
   res.render('detailCard', userCard);
 });
-
-/* server.get('/prueba', (req, res) => {
-  res.render('detailCard', { palette: 2 });
-}); */
 
 const staticServer = './src/public-react';
 server.use(express.static(staticServer));

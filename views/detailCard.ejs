@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="./favicon.ico" />
+
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,45 +20,43 @@
 
 <body>
     <main>
-        <article className="card">
-            <div className="card__container palette<%= palette%> ">
-                <div className="card__container--verticalBorder">
-                    <h2 className="card__container--name">
+        <article class="card">
+            <div class="card__container palette<%= palette%> ">
+                <div class="card__container--verticalBorder">
+                    <h2 class="card__container--name">
                         <%= name%>
                     </h2>
-                    <p className="card__container--paragraph ">
+                    <p class="card__container--paragraph ">
                         <%= job%>
                     </p>
                 </div>
 
-                <img src="<%= photo%>"
-                    className="card__container--image "></img>
+                <img src="<%= photo%>" class="image"></img>
                 <nav>
-                    <ul className="card__container--list">
-                        <li className="card__containerIcon">
+                    <ul class="card__container--list">
+                        <li class="card__containerIcon">
                             <a target="blank" href="tel:<%= phone%>">
                                 <i
-                                    className="card__rrss fa-solid fa-mobile-screen-button "></i>
+                                    class="card__rrss fa-solid fa-mobile-screen-button "></i>
                             </a>
                         </li>
-                        <li className="card__containerIcon">
+                        <li class="card__containerIcon">
                             <a target="blank" href="mailto:<%= email%>">
-                                <i
-                                    className="fa-solid fa-envelope card__rrss"></i>
+                                <i class="fa-solid fa-envelope card__rrss"></i>
                             </a>
                         </li>
-                        <li className="card__containerIcon">
+                        <li class="card__containerIcon">
                             <a target="blank"
                                 href="https://www.linkedin.com/in/<%= linkedin%>">
                                 <i
-                                    className="card__rrss fa-brands fa-linkedin-in "></i>
+                                    class="card__rrss fa-brands fa-linkedin-in "></i>
                             </a>
                         </li>
-                        <li className="card__containerIcon">
+                        <li class="card__containerIcon">
                             <a target="blank"
                                 href="https://github.com/<%= github%>">
                                 <i
-                                    className="card__rrss fa-brands fa-github-alt "></i>
+                                    class="card__rrss fa-brands fa-github-alt "></i>
                             </a>
                         </li>
                     </ul>
