@@ -57,7 +57,7 @@ server.post('/card', (req, res) => {
     );
     if (result != undefined) {
       const responseSuccess = {
-        cardURL: `http://localhost:${serverPort}/card/${result.lastInsertRowid}`,
+        cardURL: `https://gitbrunch.herokuapp.com/${result.lastInsertRowid}`,
         success: true,
       };
       res.json(responseSuccess);
