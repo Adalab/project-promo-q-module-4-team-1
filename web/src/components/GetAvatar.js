@@ -1,17 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function GetAvatar(props) {
+function GetAvatar (props) {
   const fr = new FileReader();
   const myFileField = React.createRef();
 
   const uploadImage = (ev) => {
-    console.log('La usuaria ha abierto la ventana para elegir ficheros');
-    console.log('La usuaria ha elegido los ficheros', ev.currentTarget.files);
-    console.log(
-      'El primero de los ficheros elegidos es',
-      ev.currentTarget.files[0]
-    );
+
+
 
     if (ev.currentTarget.files.length > 0) {
       const myFile = ev.currentTarget.files[0];

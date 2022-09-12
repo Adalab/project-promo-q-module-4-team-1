@@ -1,7 +1,7 @@
 import '../styles/Preview.scss';
 
 const Preview = (props) => {
-  console.log(props);
+
   return (
     <section className="section__preview">
       <article className="card">

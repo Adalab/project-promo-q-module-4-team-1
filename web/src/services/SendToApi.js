@@ -1,4 +1,4 @@
-function SendToApi(data) {
+function SendToApi (data) {
   return fetch(
     `//${window.location.host}/card`,
 
@@ -13,7 +13,7 @@ function SendToApi(data) {
     .then((resp) => resp.json())
     .then((data) => data)
     .catch(function (error) {
-      console.log(error);
+
     });
 }
 

@@ -1,14 +1,13 @@
-// Fichero src/index.js
 
-// Importamos los dos módulos de NPM necesarios para trabajar
+
+
 const express = require('express');
 const cors = require('cors');
 
-// Creamos el servidor
+
 const server = express();
 const Database = require('better-sqlite3');
 
-// Configuramos el servidor
 server.use(cors());
 server.use(express.json({ limit: '10mb' }));
 server.set('view engine', 'ejs');
@@ -17,15 +16,14 @@ const db = new Database('./data/database.db', {
   verbose: console.log,
 });
 
-// Arrancamos el servidor en el puerto 3000
 const serverPort = process.env.PORT || 4000;
 server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
 
-// Escribimos los endpoints que queramos
+
 server.post('/card', (req, res) => {
-  console.log('reqbody', req.body);
+
   if (
     req.body.palette === '' &&
     req.body.name === '' &&
