@@ -55,10 +55,11 @@ server.post('/card', (req, res) => {
     );
     if (result != undefined) {
       const responseSuccess = {
-        cardURL: `http://localhost:4000/card/${result.lastInsertRowid}`,
+        cardURL: `http://gitbrunch.herokuapp.com/card/${result.lastInsertRowid}`,
         success: true,
       };
       res.json(responseSuccess);
+      console.log('Entorno:', process.env);
     }
   }
 });
