@@ -5,7 +5,6 @@ const Header = (props) => {
   return (
     <header>
       <Link to="/">
-        {' '}
         <img
           className="header__img"
           src={props.logo}

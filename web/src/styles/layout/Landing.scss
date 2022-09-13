@@ -10,25 +10,17 @@
 .main {
   border-bottom: 1px solid $milton-glassy;
   background-color: $white-four;
-  height: 75vh;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1em;
 
-  &__colcen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0% 10.94% 9.38% 10.94%;
-    /*regla de 3*/
-  }
 
   &__section--img {
     width: 250px;
-    margin-top: 29.69%;
-    padding-bottom: 2.213rem;
+    border-radius: 2em;
   }
 
   &__section--wrapper {
@@ -70,15 +62,15 @@
     margin-bottom: 9.38%;
   }
 
-  &__link--link {
+  &__link {
     text-decoration: none;
     color: $white-six;
     font-family: $open;
     font-size: $size-button;
     text-transform: uppercase;
-    padding: 8% 16%;
+    padding: 1em;
     background-color: $dirty-blue;
-    border-radius: 20px;
+    border-radius: 0.5em;
     /*la forma no queda exacta*/
   }
 
@@ -91,24 +83,16 @@
   }
 }
 
-.main__last {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-}
+
 
 @media all and (min-width: 768px) {
-  .main {
-    height: 85vh;
 
-    &__link--div {
-      transform: translateY(121%);
-    }
 
-    &__colcen {
-      margin: 30% 10.94% 25% 10.94%;
-    }
+  &__link {
+    transform: translateY(121%);
+  }
+
+  &__colcen {
+    margin: 30% 10.94% 25% 10.94%;
   }
 }

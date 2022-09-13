@@ -1,16 +1,15 @@
 @import 'core/variables';
 
-header{
+header {
+    height: 15vh;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    
-    @media all and (min-width:680px) {
-        align-items: flex-start;
-        justify-content: left;}
+    padding: 1em;
 }
-.header__img{
-    width: 201px;
-    margin: 30px 79px 30px 40px;
-    
+
+.header__img {
+    object-fit: cover;
+    width: 80px;
+    border-radius: 0.5em;
 }
